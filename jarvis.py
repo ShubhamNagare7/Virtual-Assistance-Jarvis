@@ -32,8 +32,9 @@ def wishMe():
 
 #...takes microphone input from user and returns string output...
 def takeCommand():         
-    
-    r = sr.Recognizer()
+    r = sr.Recognizer()        # Initialize the recognizer
+
+    # Open the microphone for capturing audio
     with sr.Microphone() as source:
         print("Listening...")
         r.pause_threshold = 1
@@ -42,7 +43,7 @@ def takeCommand():
 
     try:
         print("Recognizing...")
-        query = r.recognize_google(audio, Language='en-in')
+        query = r.recognize_google(audio, Language='en-in')     # Recognize the speech
         print(f"User said: {query}\n")
 
     except Exception as e:
